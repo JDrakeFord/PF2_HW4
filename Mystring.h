@@ -55,8 +55,8 @@ public:
 
     // Assignment operator
     // the next two lines are commented out, so to use default. Uncomment to implement both later
-    //Mystring& operator=(const Mystring&);
-    //Mystring& operator=(const char *);
+    Mystring& operator=(const Mystring&);
+    Mystring& operator=(const char *);
 
     // Array notation
     char operator[](size_type pos) const;  // minor difference we use char and not const char&

@@ -100,6 +100,33 @@ Mystring & Mystring::append(const char *str, size_type n) {
     return *this;
 }
 
+Mystring &Mystring::insert(size_type pos, const char *str) {
+    char *inserted = new char[len + strlen(str)];
+    for(int i = 0; i < pos; i++)
+    {
+        inserted[i] = ptr_buffer[i];
+    }
+    for(int i = 0; str[i] != '\0'; i++)
+    {
+        inserted[i + pos] = str[i];
+    }
+    int k = pos;
+    for(int i = (pos + strlen(str)); i < len + strlen(str); i++)
+    {
+        inserted[i] = ptr_buffer[k];
+        k++;
+    }
+    ptr_buffer = inserted;
+    len = strlen(inserted);
+    buf_size = len + 1;
+    return *this;
+}
+
+Mystring &Mystring::insert(size_type pos, const Mystring &str) {
+    return insert(pos, str.c_str());
+}
+
+
 Mystring::size_type Mystring::find_first_of(const char *s, size_type pos, size_type n) const {
     for(int i = 0; i <= n; i++)
     {
@@ -149,13 +176,24 @@ char Mystring::operator[](size_type pos) const {
     return *(ptr_buffer + pos);
 }
 
-
-
-
 // one of the over loaded assignment operator if you have time
-/*Mystring& Mystring::operator=(const Mystring& orig)
+Mystring& Mystring::operator=(const Mystring& orig)
 {
-}*/
+    if(this != &orig)
+    {
+        delete[] ptr_buffer;
+        ptr_buffer = new char[buf_size];
+        len = orig.len;
+        buf_size = orig.buf_size;
+        strcpy(ptr_buffer, orig.ptr_buffer);
+    }
+    return *this;
+}
+
+
+Mystring &Mystring::operator=(const char *str) {
+    return operator=(*new Mystring(str));
+}
 
 // some simple methods implemented for you
 Mystring::size_type Mystring::size() const

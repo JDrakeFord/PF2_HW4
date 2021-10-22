@@ -33,10 +33,9 @@ int main()
     Mystring s1("Hi there!");
     check(s1, "s1");
 
-    Mystring set("Hi there");
-    cout << s1.find_last_not_of(set.c_str(), 5165614);
+    Mystring test("!!");
+    s1.insert(4, s1);
 
-
-
+    check(s1, "s1");
     return 0;
 }
