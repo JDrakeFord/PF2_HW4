@@ -33,9 +33,8 @@ int main()
     Mystring s1("Hi there!");
     check(s1, "s1");
 
-    Mystring test("!!");
-    s1.insert(4, s1);
-
+    Mystring s2("Boo!");
+    s1.replace(0, 3, s2);
     check(s1, "s1");
-    return 0;
+    
 }

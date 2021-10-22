@@ -126,6 +126,18 @@ Mystring &Mystring::insert(size_type pos, const Mystring &str) {
     return insert(pos, str.c_str());
 }
 
+Mystring &Mystring::replace(size_type start, size_type span, const char *str) {
+    for(int i = 0; i < span && str[i] != '\0'; i++)
+    {
+        ptr_buffer[i + start] = str[i];
+    }
+    return *this;
+}
+
+Mystring &Mystring::replace(size_type start, size_type span, const Mystring &str) {
+    return replace(start, span, str.c_str());
+}
+
 
 Mystring::size_type Mystring::find_first_of(const char *s, size_type pos, size_type n) const {
     for(int i = 0; i <= n; i++)
