@@ -11,14 +11,14 @@
 #include <string>
 #include "Mystring.h"
 
-#define string Mystring
+//#define string Mystring
 
 using namespace std;
 
 /*
  * Check function from the previous lab
  */
-void check (const string s, const string name)
+void check (const Mystring s, const string name)
 {
     cout << "checking " << name << endl;
     cout << name << " contains " << s << endl;
@@ -30,11 +30,13 @@ void check (const string s, const string name)
 
 int main()
 {
-    cout << "This is lab 6" << endl;
-    string s1("Hello, World!");
-    string s1name("s1");
-    check(s1, s1name);
-    check(s1, s1name);
-    cout << "Lab 6 ends" << endl;
+    Mystring s1("Hi there!");
+    check(s1, "s1");
+
+    Mystring set("Hi there");
+    cout << s1.find_last_not_of(set.c_str(), 5165614);
+
+
+
     return 0;
 }

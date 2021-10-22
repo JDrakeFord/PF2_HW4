@@ -37,7 +37,7 @@ Mystring::Mystring(const char * s)
     strcpy(ptr_buffer, s);
 }
 
-// copy constructor to be implemented
+// TODO NOT TESTED
 Mystring::Mystring(const Mystring& orig) {
     len = orig.length();
     buf_size = len + 1;
@@ -45,10 +45,21 @@ Mystring::Mystring(const Mystring& orig) {
     strcpy(ptr_buffer, orig.ptr_buffer);
 }
 
+//TODO I DONT KNOW IF THIS IS RIGHT
 void Mystring::reserve(size_type n) {
-    buf_size = n;
+    if(n <= buf_size)
+        return;
+    else
+    {
+        char *del = ptr_buffer;
+        ptr_buffer = new char[n];
+        strcpy(ptr_buffer, del);
+        delete del;
+        buf_size = n;
+    }
 }
 
+//TODO NOT FINISHED
 bool Mystring::empty() const {
     if(len == 0)
         return true;
@@ -56,22 +67,25 @@ bool Mystring::empty() const {
         return false;
 }
 
+//TODO NOT FINISHED
 void Mystring::clear() {
     len = 0;
     *ptr_buffer = '\0';
 }
 
 void Mystring::push_back(char c) {
-    char *iterate;
+    //reserve(len + 1);
+    char *iterate = ptr_buffer;
     while(*iterate != '\0')
         iterate++;
     *iterate = c;
     iterate++;
     *iterate = '\0';
+    len++;
 }
 
 Mystring & Mystring::append(const Mystring &str, size_type subpos, size_type sublen) {
-    for(int i = subpos; i < sublen; i++)
+    for(int i = subpos; i <= sublen; i++)
     {
         push_back(*(str.ptr_buffer + i));
     }
@@ -84,6 +98,38 @@ Mystring & Mystring::append(const char *str, size_type n) {
         push_back(*(str + i));
     }
     return *this;
+}
+
+Mystring::size_type Mystring::find_first_of(const char *s, size_type pos, size_type n) const {
+    for(int i = 0; i <= n; i++)
+    {
+        for(int k = 0; s[k] != '\0'; k++)
+        {
+            if(ptr_buffer[i + pos] == s[k])
+                return i + pos;
+        }
+    }
+    return -1;
+}
+
+Mystring::size_type Mystring::find_last_not_of(const char *s, size_type pos) const {
+    if(pos > len)
+        pos = len - 1;
+    for(int i = pos; i >= 0; i--)
+    {
+        bool charFound = false;
+        for(int k = 0; s[k] != '\0'; k++)
+        {
+            if(ptr_buffer[i] == s[k])
+            {
+                charFound = true;
+                break;
+            }
+        }
+        if(!charFound)
+            return i;
+    }
+    return -1;
 }
 
 Mystring & Mystring::operator+=(const Mystring &str) {
