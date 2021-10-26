@@ -74,7 +74,7 @@ void Mystring::clear() {
 }
 
 void Mystring::push_back(char c) {
-    //reserve(len + 1);
+    reserve(buf_size + 1);
     char *iterate = ptr_buffer;
     while(*iterate != '\0')
         iterate++;
@@ -194,9 +194,9 @@ Mystring& Mystring::operator=(const Mystring& orig)
     if(this != &orig)
     {
         delete[] ptr_buffer;
-        ptr_buffer = new char[buf_size];
-        len = orig.len;
         buf_size = orig.buf_size;
+        len = orig.len;
+        ptr_buffer = new char[buf_size];
         strcpy(ptr_buffer, orig.ptr_buffer);
     }
     return *this;

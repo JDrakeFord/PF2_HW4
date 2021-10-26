@@ -33,8 +33,8 @@ int main()
     Mystring s1("Hi there!");
     check(s1, "s1");
 
-    Mystring s2("Boo!");
-    s1.replace(0, 3, s2);
-    check(s1, "s1");
+    s1.push_back('!');
+    cout << s1.capacity();
+
     
 }
