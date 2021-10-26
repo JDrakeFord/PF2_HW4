@@ -37,7 +37,6 @@ Mystring::Mystring(const char * s)
     strcpy(ptr_buffer, s);
 }
 
-// TODO NOT TESTED
 Mystring::Mystring(const Mystring& orig) {
     len = orig.length();
     buf_size = len + 1;
@@ -45,7 +44,6 @@ Mystring::Mystring(const Mystring& orig) {
     strcpy(ptr_buffer, orig.ptr_buffer);
 }
 
-//TODO I DONT KNOW IF THIS IS RIGHT
 void Mystring::reserve(size_type n) {
     if(n <= buf_size)
         return;
@@ -59,7 +57,6 @@ void Mystring::reserve(size_type n) {
     }
 }
 
-//TODO NOT FINISHED
 bool Mystring::empty() const {
     if(len == 0)
         return true;
@@ -70,7 +67,10 @@ bool Mystring::empty() const {
 //TODO NOT FINISHED
 void Mystring::clear() {
     len = 0;
+    char *del = ptr_buffer;
+    ptr_buffer = new char[buf_size];
     *ptr_buffer = '\0';
+    delete del;
 }
 
 void Mystring::push_back(char c) {
@@ -173,6 +173,7 @@ Mystring::size_type Mystring::find_last_not_of(const char *s, size_type pos) con
 
 Mystring & Mystring::operator+=(const Mystring &str) {
     append(str.c_str(), str.length());
+    return *this;
 }
 
 Mystring & Mystring::operator+=(const char *str) {
@@ -186,6 +187,56 @@ char & Mystring::operator[](size_type pos) {
 
 char Mystring::operator[](size_type pos) const {
     return *(ptr_buffer + pos);
+}
+
+bool operator==(const Mystring& a, const Mystring& b)
+{
+    if(a.length() != b.length())
+        return false;
+    bool toReturn = true;
+    for(int i = 0; i < a.length(); i++)
+    {
+        if(a[i] != b[i])
+        {
+            toReturn = false;
+            break;
+        }
+    }
+    return toReturn;
+}
+
+bool operator==(const char * x, const Mystring& b)
+{
+    Mystring a(x);
+    return (a == b);
+}
+
+bool operator==(const Mystring& a, const char * x)
+{
+    Mystring b(x);
+    return (a == b);
+}
+
+bool operator!=(const Mystring& a, const Mystring& b)
+{
+    return !(a == b);
+}
+
+bool operator!=(const char * a, const Mystring& b)
+{
+    return !(a == b);
+}
+
+bool operator!=(const Mystring& a, const char * b)
+{
+    return !(a == b);
+}
+
+Mystring operator+(const Mystring& a, const Mystring& b)
+{
+    Mystring c(a);
+    Mystring d(b);
+    return c.append(d.c_str(), d.length());
 }
 
 // one of the over loaded assignment operator if you have time
