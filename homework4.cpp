@@ -1,4 +1,4 @@
-/* 
+/*
  * File:   main.cpp
  * Author: wingning
  *
@@ -53,12 +53,37 @@ void check_obj (const string& s, const string name)
 
 int main()
 {
-    const char *s1 = {"test1"};
+    cout << "This is Lab 6\n";
+    string s1("Hello, World!");
+    string s1name ("s1");
+    check (s1, s1name);
+    check (s1, s1name);
+    cout << "Lab 6 ends\n";
 
-    string s2("test2");
+    cout << "\n--- Testing reserve ---\n";
 
-    if(s1 != s2)
-        cout << "They aren't equal!" << endl;
-    else
-        cout << "They are equal!" << endl;
+
+    check_obj(s1, s1name);
+    s1.reserve(15);
+    check_obj (s1, s1name);
+
+    cout << "---Testing assignment operator = ---\n";
+    s1 = "Hi!";
+    check_obj(s1, s1name);
+
+    string s2,s3("abcdefghijklmnopqrstuvwxyz01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    s2 = s1 = s3;
+    check_obj(s1, s1name);
+    check_obj(s2, "s2");
+    check_obj(s3, "s3");
+    string s4;
+    check_obj(s4, "s4");
+    s3 = s4;
+    check_obj(s3, "s3");
+
+
+    cout << "---Testing append ---\n";
+    s3.append("CSCE2014", 4);
+    check_obj(s3, "s3");
+    return 0;
 }

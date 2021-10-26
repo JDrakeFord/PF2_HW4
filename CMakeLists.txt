@@ -3,4 +3,4 @@ project(HW4)
 
 set(CMAKE_CXX_STANDARD 98)
 
-add_executable(HW4 main.cpp Mystring.h Mystring.cpp)
+add_executable(HW4 Testing_Program.cpp Mystring.h Mystring.cpp homework4.cpp)
