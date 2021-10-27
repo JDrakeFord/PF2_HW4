@@ -1,0 +1,452 @@
+Script started on 2021-10-27 08:44:22-05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="233" LINES="12"]
+]0;jdf028@drakelinux: ~/CLionProjects/PF2_HW4[01;32mjdf028@drakelinux[00m:[01;34m~/CLionProjects/PF2_HW4[00m$ g++ -Wall -std=c++98 homework4.cpp Mystring.cpp Mystring.h[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1@t[1@e[1@s[1@t[1@i[1@n[1@g[1P[1P[1P[1P[1P[1P[1P[1@T[1@e[1@s[1@t[1@i[1@n[1@g[1@_[1@P[1@r[1@o[1@g[1@r[1@a[1@m[C[1@.[1@c[1@p[1@p[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C -o HW[K[Khw4test.exe
+[01m[KTesting_Program.cpp:[m[K In function ‘[01m[Kint main()[m[K’:
+[01m[KTesting_Program.cpp:147:17:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kelse[m[K’ clause does not guard... [[01;35m[K-Wmisleading-indentation[m[K]
+  147 |                 [01;35m[Kelse[m[K
+      |                 [01;35m[K^~~~[m[K
+[01m[KTesting_Program.cpp:148:60:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kelse[m[K’
+  148 |                     cout << "They are NOT equal!" << endl; [01;36m[Kbreak[m[K;
+      |                                                            [01;36m[K^~~~~[m[K
+[01m[KTesting_Program.cpp:162:17:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kelse[m[K’ clause does not guard... [[01;35m[K-Wmisleading-indentation[m[K]
+  162 |                 [01;35m[Kelse[m[K
+      |                 [01;35m[K^~~~[m[K
+[01m[KTesting_Program.cpp:163:56:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kelse[m[K’
+  163 |                     cout << "They are equal!" << endl; [01;36m[Kbreak[m[K;
+      |                                                        [01;36m[K^~~~~[m[K
+[01m[KMystring.cpp:[m[K In member function ‘[01m[KMystring& Mystring::append(const Mystring&, Mystring::size_type, Mystring::size_type)[m[K’:
+[01m[KMystring.cpp:88:27:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[KMystring::size_type[m[K’ {aka ‘[01m[Kunsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+   88 |     for(int i = subpos; [01;35m[Ki <= sublen[m[K; i++)
+      |                         [01;35m[K~~^~~~~~~~~[m[K
+[01m[KMystring.cpp:[m[K In member function ‘[01m[KMystring& Mystring::append(const char*, Mystring::size_type)[m[K’:
+[01m[KMystring.cpp:96:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[KMystring::size_type[m[K’ {aka ‘[01m[Kunsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+   96 |     for(int i = 0; [01;35m[Ki < n[m[K; i++)
+      |                    [01;35m[K~~^~~[m[K
+[01m[KMystring.cpp:[m[K In member function ‘[01m[KMystring& Mystring::insert(Mystring::size_type, const char*)[m[K’:
+[01m[KMystring.cpp:105:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[KMystring::size_type[m[K’ {aka ‘[01m[Kunsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  105 |     for(int i = 0; [01;35m[Ki < pos[m[K; i++)
+      |                    [01;35m[K~~^~~~~[m[K
+[01m[KMystring.cpp:114:40:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Ksize_t[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  114 |     for(int i = (pos + strlen(str)); [01;35m[Ki < len + strlen(str)[m[K; i++)
+      |                                      [01;35m[K~~^~~~~~~~~~~~~~~~~~~[m[K
+[01m[KMystring.cpp:[m[K In member function ‘[01m[KMystring& Mystring::replace(Mystring::size_type, Mystring::size_type, const char*)[m[K’:
+[01m[KMystring.cpp:130:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[KMystring::size_type[m[K’ {aka ‘[01m[Kunsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  130 |     for(int i = 0; [01;35m[Ki < span[m[K && str[i] != '\0'; i++)
+      |                    [01;35m[K~~^~~~~~[m[K
+[01m[KMystring.cpp:[m[K In member function ‘[01m[KMystring::size_type Mystring::find_first_of(const char*, Mystring::size_type, Mystring::size_type) const[m[K’:
+[01m[KMystring.cpp:143:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[KMystring::size_type[m[K’ {aka ‘[01m[Kunsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  143 |     for(int i = 0; [01;35m[Ki <= n[m[K; i++)
+      |                    [01;35m[K~~^~~~[m[K
+[01m[KMystring.cpp:[m[K In function ‘[01m[Kbool operator==(const Mystring&, const Mystring&)[m[K’:
+[01m[KMystring.cpp:197:22:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[KMystring::size_type[m[K’ {aka ‘[01m[Kunsigned int[m[K’} [[01;35m[K-Wsign-compare[m[K]
+  197 |     for(int i = 0; [01;35m[Ki < a.length()[m[K; i++)
+      |                    [01;35m[K~~^~~~~~~~~~~~[m[K
+]0;jdf028@drakelinux: ~/CLionProjects/PF2_HW4[01;32mjdf028@drakelinux[00m:[01;34m~/CLionProjects/PF2_HW4[00m$ ls
+[0m[01;34mcmake-build-debug[0m  CMakeLists.txt  homework4.cpp  [01;32mhw4test.exe[0m  Mystring.cpp  Mystring.h  Testing_Program.cpp  typescript
+]0;jdf028@drakelinux: ~/CLionProjects/PF2_HW4[01;32mjdf028@drakelinux[00m:[01;34m~/CLionProjects/PF2_HW4[00m$ ./hw4test.exe
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+1
+What string would you like to test?
+TestStringA
+checking s1 the object
+s1 contains TestStringA
+s1 capacity() is 12
+s1 length() is 11
+s1 size() is 11
+s1 max_size() is 1073741820
+
+How much space would you like to reserve?
+60
+checking s1 the object
+s1 contains TestStringA
+s1 capacity() is 60
+s1 length() is 11
+s1 size() is 11
+s1 max_size() is 1073741820
+
+Press any key and hit enter to print menu again
+j
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+2
+What would you like to use as your primary string? (Please do not use any spaces)
+S TestStringA
+checking s1 the object
+s1 contains TestStringA
+s1 capacity() is 12
+s1 length() is 11
+s1 size() is 11
+s1 max_size() is 1073741820
+
+What would you like to concatenate to it?
+TestSTrin    tringB
+checking s1 the object
+s1 contains TestStringATestStringB
+s1 capacity() is 23
+s1 length() is 22
+s1 size() is 22
+s1 max_size() is 1073741820
+
+Press any key and hit enter to print menu again
+j
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+3
+What would you like to use as your primary string? (Please do not use any spaces)
+TestStringA
+checking s1 the object
+s1 contains TestStringA
+s1 capacity() is 12
+s1 length() is 11
+s1 size() is 11
+s1 max_size() is 1073741820
+
+What would you like to insert into it?
+TESTSTRINGB
+What position would you like to insert TESTSTRINGB into TestStringA?
+4
+checking s1 the object
+s1 contains TestTESTSTRINGBStringA
+s1 capacity() is 23
+s1 length() is 22
+s1 size() is 22
+s1 max_size() is 1073741820
+
+Press any key and hit enter to print menu again
+j
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+4
+What would you like to use as your primary string? (Please do not use any spaces)
+Teest   stStringA
+checking s1 the object
+s1 contains TestStringA
+s1 capacity() is 12
+s1 length() is 11
+s1 size() is 11
+s1 max_size() is 1073741820
+
+What would you like to replace a section of that with?
+TESTSTRINGB
+At what position would you like to start replacing TestStringA with TESTSTRINGB?
+4
+What would you like the span variable to be? (How much of your second string to replace into s1)
+3
+checking s1 the object
+s1 contains TestTESingA
+s1 capacity() is 12
+s1 length() is 11
+s1 size() is 11
+s1 max_size() is 1073741820
+
+Press any key and hit enter to print menu again
+j
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+5
+What would you like the first string to be? (Please do not use any spaces)
+abc
+checking s1 the object
+s1 contains abc
+s1 capacity() is 4
+s1 length() is 3
+s1 size() is 3
+s1 max_size() is 1073741820
+
+What would you like the second string to be? (Please do not use any spaces)
+abc
+checking s2 the object
+s2 contains abc
+s2 capacity() is 4
+s2 length() is 3
+s2 size() is 3
+s2 max_size() is 1073741820
+
+They are equal!
+Press any key and hit enter to print menu again
+j
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+5
+What would you like the first string to be? (Please do not use any spaces)
+abc
+checking s1 the object
+s1 contains abc
+s1 capacity() is 4
+s1 length() is 3
+s1 size() is 3
+s1 max_size() is 1073741820
+
+What would you like the second string to be? (Please do not use any spaces)
+abd
+checking s2 the object
+s2 contains abd
+s2 capacity() is 4
+s2 length() is 3
+s2 size() is 3
+s2 max_size() is 1073741820
+
+They are NOT equal!
+Press any key and hit enter to print menu again
+j
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+6
+What would you like the first string to be? (Please do not use any spaces)
+abc
+checking s1 the object
+s1 contains abc
+s1 capacity() is 4
+s1 length() is 3
+s1 size() is 3
+s1 max_size() is 1073741820
+
+What would you like the second string to be? (Please do not use any spaces)
+abc
+checking s2 the object
+s2 contains abc
+s2 capacity() is 4
+s2 length() is 3
+s2 size() is 3
+s2 max_size() is 1073741820
+
+They are equal!
+Press any key and hit enter to print menu again
+j
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+6
+What would you like the first string to be? (Please do not use any spaces)
+abc
+checking s1 the object
+s1 contains abc
+s1 capacity() is 4
+s1 length() is 3
+s1 size() is 3
+s1 max_size() is 1073741820
+
+What would you like the second string to be? (Please do not use any spaces)
+abd
+checking s2 the object
+s2 contains abd
+s2 capacity() is 4
+s2 length() is 3
+s2 size() is 3
+s2 max_size() is 1073741820
+
+They are NOT equal!
+Press any key and hit enter to print menu again
+j
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+7
+What would you like the first string to be? (Please do not use any spaces)
+Ses   
+Te  TestStringA
+checking s1 the object
+s1 contains TestStringA
+s1 capacity() is 12
+s1 length() is 11
+s1 size() is 11
+s1 max_size() is 1073741820
+
+What would you like the second string to be? (Please do not use any spaces)
+TestStringB
+checking s2 the object
+s2 contains TestStringB
+s2 capacity() is 12
+s2 length() is 11
+s2 size() is 11
+s2 max_size() is 1073741820
+
+checking s3 the object
+s3 contains TestStringATestStringB
+s3 capacity() is 23
+s3 length() is 22
+s3 size() is 22
+s3 max_size() is 1073741820
+
+Press any key and hit enter to print menu again
+j
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+8
+What string would you like to test?
+TestStringA
+checking s1 the object
+s1 contains TestStringA
+s1 capacity() is 12
+s1 length() is 11
+s1 size() is 11
+s1 max_size() is 1073741820
+
+What index would you like to use to test []?
+5
+s1[5] is t
+Press any key and hit enter to print menu again
+j
+______________________________HOMEWORK 4 TESTING PROGRAM______________________________
+______________________________________________________________________________________
+MENU - Enter the number corresponding to what you want to test (Or e for exit)
+1. Reserve function
+2. Append (If test passes, both += operator and append function work, assuming += calls append)
+3. Insert function
+4. Replace function
+5. Equivalent test (== operator)
+6. Nonequivalent test (!= operator)
+7. Concatenation GLOBAL operator (+, not +=)
+8. Array notation operator ([])
+9. Assignment Operator
+e. Exit
+______________________________________________________________________________________
+9
+What would you like your first string to be? (Please no spaces)
+TestStringA
+checking s1 the object
+s1 contains TestStringA
+s1 capacity() is 12
+s1 length() is 11
+s1 size() is 11
+s1 max_size() is 1073741820
+
+What would you like the second string to be? (Please no spaes)
+TESTSTRINGB
+checking s2 the object
+s2 contains TESTSTRINGB
+s2 capacity() is 12
+s2 length() is 11
+s2 size() is 11
+s2 max_size() is 1073741820
+
+s1 will now be assigned s2 (s1 = s2)
+checking s1 the object
+s1 contains TESTSTRINGB
+s1 capacity() is 12
+s1 length() is 11
+s1 size() is 11
+s1 max_size() is 1073741820
+
+]0;jdf028@drakelinux: ~/CLionProjects/PF2_HW4[01;32mjdf028@drakelinux[00m:[01;34m~/CLionProjects/PF2_HW4[00m$ exit
+exit
+
+Script done on 2021-10-27 08:48:45-05:00 [COMMAND_EXIT_CODE="0"]
