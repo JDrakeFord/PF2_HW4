@@ -37,6 +37,7 @@ Mystring::Mystring(const char * s)
     strcpy(ptr_buffer, s);
 }
 
+// Copy constructor from String object
 Mystring::Mystring(const Mystring& orig) {
     len = orig.length();
     buf_size = len + 1;
@@ -44,12 +45,16 @@ Mystring::Mystring(const Mystring& orig) {
     strcpy(ptr_buffer, orig.ptr_buffer);
 }
 
+//Reserve function - used to reserve space for a larger string
 void Mystring::reserve(size_type n) {
+    //If we don't need to reserve any space, we exit
     if(n <= buf_size)
         return;
+    //Otherwise we reserve
     else
     {
         char *del = ptr_buffer;
+        //Create new space for c-string
         ptr_buffer = new char[n];
         strcpy(ptr_buffer, del);
         delete del;
@@ -57,24 +62,31 @@ void Mystring::reserve(size_type n) {
     }
 }
 
+//Test to see if the string is empty
 bool Mystring::empty() const {
+    //If it is empty, then the len will be 0
     if(len == 0)
         return true;
     else
         return false;
 }
 
-//TODO NOT FINISHED
+//Set the string to be empty
 void Mystring::clear() {
+    //Set len to 0
     len = 0;
+    //delete c-string and create new one that is empty
     char *del = ptr_buffer;
     ptr_buffer = new char[buf_size];
     *ptr_buffer = '\0';
     delete del;
 }
 
+//Add one character to the back of the string
 void Mystring::push_back(char c) {
+    //Reserve the space
     reserve(buf_size + 1);
+    //Add character to the back
     char *iterate = ptr_buffer;
     while(*iterate != '\0')
         iterate++;
@@ -84,6 +96,7 @@ void Mystring::push_back(char c) {
     len++;
 }
 
+//Append function - run a series of push_back calls to append many characters to the string
 Mystring & Mystring::append(const Mystring &str, size_type subpos, size_type sublen) {
     for(int i = subpos; i <= sublen; i++)
     {
@@ -92,6 +105,7 @@ Mystring & Mystring::append(const Mystring &str, size_type subpos, size_type sub
     return *this;
 }
 
+//Append function - run a series of push_back calls to append many characters to the string
 Mystring & Mystring::append(const char *str, size_type n) {
     for(int i = 0; i < n; i++)
     {
@@ -100,17 +114,21 @@ Mystring & Mystring::append(const char *str, size_type n) {
     return *this;
 }
 
+//Insert a c-string into string object
 Mystring &Mystring::insert(size_type pos, const char *str) {
     char *inserted = new char[len + strlen(str)];
+    //We copy the first section of the string
     for(int i = 0; i < pos; i++)
     {
         inserted[i] = ptr_buffer[i];
     }
+    //We copy the characters to be inserted
     for(int i = 0; str[i] != '\0'; i++)
     {
         inserted[i + pos] = str[i];
     }
     int k = pos;
+    //We copy the last section of the string
     for(int i = (pos + strlen(str)); i < len + strlen(str); i++)
     {
         inserted[i] = ptr_buffer[k];
@@ -122,10 +140,12 @@ Mystring &Mystring::insert(size_type pos, const char *str) {
     return *this;
 }
 
+//Insert function but with Mystring instead of a cstring
 Mystring &Mystring::insert(size_type pos, const Mystring &str) {
     return insert(pos, str.c_str());
 }
 
+//Replace a certain range of the string with a cstring
 Mystring &Mystring::replace(size_type start, size_type span, const char *str) {
     for(int i = 0; i < span && str[i] != '\0'; i++)
     {
@@ -134,11 +154,12 @@ Mystring &Mystring::replace(size_type start, size_type span, const char *str) {
     return *this;
 }
 
+//Same replace function, but using another Mystring object
 Mystring &Mystring::replace(size_type start, size_type span, const Mystring &str) {
     return replace(start, span, str.c_str());
 }
 
-
+//Find_first_of function - rewritten from HW1
 Mystring::size_type Mystring::find_first_of(const char *s, size_type pos, size_type n) const {
     for(int i = 0; i <= n; i++)
     {
@@ -151,6 +172,7 @@ Mystring::size_type Mystring::find_first_of(const char *s, size_type pos, size_t
     return -1;
 }
 
+//Find last not of - rewritten from HW1
 Mystring::size_type Mystring::find_last_not_of(const char *s, size_type pos) const {
     if(pos > len)
         pos = len - 1;
@@ -171,24 +193,29 @@ Mystring::size_type Mystring::find_last_not_of(const char *s, size_type pos) con
     return -1;
 }
 
+//append operator
 Mystring & Mystring::operator+=(const Mystring &str) {
     append(str.c_str(), str.length());
     return *this;
 }
 
+//append operator
 Mystring & Mystring::operator+=(const char *str) {
     append(str, strlen(str));
     return *this;
 }
 
+//Array notation operator
 char & Mystring::operator[](size_type pos) {
     return *(ptr_buffer + pos);
 }
+//Array notation operator
 
 char Mystring::operator[](size_type pos) const {
     return *(ptr_buffer + pos);
 }
 
+//Equivalence operator
 bool operator==(const Mystring& a, const Mystring& b)
 {
     if(a.length() != b.length())
@@ -205,33 +232,39 @@ bool operator==(const Mystring& a, const Mystring& b)
     return toReturn;
 }
 
+//Equivalence operator
 bool operator==(const char * x, const Mystring& b)
 {
     Mystring a(x);
     return (a == b);
 }
 
+//Equivalence operator
 bool operator==(const Mystring& a, const char * x)
 {
     Mystring b(x);
     return (a == b);
 }
 
+//Equivalence operator (inverted)
 bool operator!=(const Mystring& a, const Mystring& b)
 {
     return !(a == b);
 }
 
+//Equivalence operator (inverted)
 bool operator!=(const char * a, const Mystring& b)
 {
     return !(a == b);
 }
 
+//Equivalence operator (inverted)
 bool operator!=(const Mystring& a, const char * b)
 {
     return !(a == b);
 }
 
+//Global append operator
 Mystring operator+(const Mystring& a, const Mystring& b)
 {
     Mystring c(a);
@@ -253,7 +286,7 @@ Mystring& Mystring::operator=(const Mystring& orig)
     return *this;
 }
 
-
+//Assingment operator
 Mystring &Mystring::operator=(const char *str) {
     return operator=(*new Mystring(str));
 }
