@@ -63,7 +63,7 @@ int main()
     do{
         cout << "______________________________HOMEWORK 4 TESTING PROGRAM______________________________\n"
                 "______________________________________________________________________________________\n"
-                "MENU - Enter the number corresponding to what you want to test (Or 9 for exit)\n"
+                "MENU - Enter the number corresponding to what you want to test (Or e for exit)\n"
                 "1. Reserve function\n"
                 "2. Append (If test passes, both += operator and append function work, assuming += calls append)\n"
                 "3. Insert function\n"
@@ -72,7 +72,8 @@ int main()
                 "6. Nonequivalent test (!= operator)\n"
                 "7. Concatenation GLOBAL operator (+, not +=)\n"
                 "8. Array notation operator ([])\n"
-                "9. Exit\n"
+                "9. Assignment Operator\n"
+                "e. Exit\n"
                 "______________________________________________________________________________________\n";
         cin >> input;
         switch(input){
@@ -185,7 +186,22 @@ int main()
                 cout << "s1[" << intInput << "] is " << s1[intInput] << endl; break;
             }
             case '9':
-                exit = true;
+            {
+                cout << "What would you like your first string to be? (Please no spaces)" << endl;
+                cin >> stringInput;
+                Mystring s1(stringInput.c_str());
+                check_obj(s1, "s1");
+                cout << "What would you like the second string to be? (Please no spaes)" << endl;
+                cin >> stringInput;
+                Mystring s2(stringInput.c_str());
+                check_obj(s2, "s2");
+                cout << "s1 will now be assigned s2 (s1 = s2)" << endl;
+                s1 = s2;
+                check_obj(s1, "s1"); break;
+            }
+            case 'e':
+                exit = true; break;
+
         }
         if(!exit){
             cout << "Press any key and hit enter to print menu again" << endl;
